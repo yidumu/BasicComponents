@@ -13,7 +13,6 @@ class ExampleViewModel : ViewModel() {
         // PagingConfig, such as prefetchDistance.
         PagingConfig(pageSize = 20)
     ) {
-        Log.d("", "null() called")
         ExamplePagingSource()
     }.flow
         .cachedIn(viewModelScope)

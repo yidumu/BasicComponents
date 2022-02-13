@@ -15,8 +15,8 @@ class UserViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
      * Items might be null if they are not paged in yet. PagedListAdapter will re-bind the
      * ViewHolder when Item is loaded.
      */
-    fun bind(item: String?) {
+    fun bind(item: User?) {
         Log.d("TAG", "bind() called with: item = $item")
-        if (item != null) nameView.text = item
+        if (item != null) nameView.text = item.id.toString()
     }
 }

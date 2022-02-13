@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 
-class UserAdapter(diffCallback: DiffUtil.ItemCallback<String>) :
-    PagingDataAdapter<String, UserViewHolder>(diffCallback) {
+class UserAdapter(diffCallback: DiffUtil.ItemCallback<User>) :
+    PagingDataAdapter<User, UserViewHolder>(diffCallback) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): UserViewHolder {
+        Log.d("TAG", "onCreateViewHolder() called with: parent = $parent, viewType = $viewType")
         return UserViewHolder(parent)
     }
 

@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    val viewModel by viewModels<ExampleViewModel>()
+    private val viewModel by viewModels<ExampleViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
