@@ -56,5 +56,4 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
     // Activity 拓展 by ViewModel
     implementation("androidx.activity:activity-ktx:1.4.0")
-
 }
