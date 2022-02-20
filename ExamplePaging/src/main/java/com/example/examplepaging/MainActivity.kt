@@ -1,4 +1,4 @@
-package com.example.basiccomponents
+package com.example.examplepaging
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

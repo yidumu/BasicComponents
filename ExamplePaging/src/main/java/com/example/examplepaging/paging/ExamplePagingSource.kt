@@ -1,4 +1,4 @@
-package com.example.basiccomponents
+package com.example.examplepaging.paging
 
 import android.util.Log
 import androidx.paging.PagingSource
@@ -14,8 +14,7 @@ class ExamplePagingSource() : PagingSource<Int, User>() {
         return try {
             val nextPageNumber = params.key ?: 1//当key为null return 1
             var numbers = mutableListOf(
-                User(10), User(11), User(13), User(14), User(15), User(16),
-                User(17), User(18)
+                User(10, "")
             )
             Log.d("TAG", "load() called with: params = ${params.key} $numbers")
             LoadResult.Page(

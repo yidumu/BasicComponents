@@ -1,16 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk rootProject.compileSdkVersion
+    compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.basiccomponents"
-        minSdk rootProject.minSdkVersion
-        targetSdk rootProject.targetSdkVersion
+        applicationId "com.example.examplepaging"
+        minSdk 21
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -23,22 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
-//依赖配置管理 https://developer.android.google.cn/studio/build/dependencies#dependency-configurations
+
 dependencies {
     implementation "androidx.core:core-ktx:$coreVersion"
     implementation("androidx.appcompat:appcompat:$supportLibVersion")

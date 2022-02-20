@@ -1,10 +1,11 @@
-package com.example.basiccomponents
+package com.example.examplepaging.paging
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.examplepaging.R
 
 class UserViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.user_item, parent, false)

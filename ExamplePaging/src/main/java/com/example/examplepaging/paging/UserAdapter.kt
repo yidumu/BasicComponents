@@ -1,4 +1,4 @@
-package com.example.basiccomponents
+package com.example.examplepaging.paging
 
 import android.util.Log
 import android.view.ViewGroup

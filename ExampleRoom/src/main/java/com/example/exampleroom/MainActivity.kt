@@ -1,4 +1,4 @@
-package com.example.basiccomponents
+package com.example.exampleroom
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
