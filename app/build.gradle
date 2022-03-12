@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdk rootProject.compileSdkVersion
+    compileSdk build_versions.compile_sdk
 
     defaultConfig {
         applicationId "com.example.basiccomponents"
-        minSdk rootProject.minSdkVersion
-        targetSdk rootProject.targetSdkVersion
+        minSdk minSdkVersion
+        targetSdk build_versions.target_sdk
         versionCode 1
         versionName "1.0"
 
@@ -40,6 +40,20 @@ android {
 
 //依赖配置管理 https://developer.android.google.cn/studio/build/dependencies#dependency-configurations
 dependencies {
+    def supportLibVersion = '1.4.0'
+    def coreVersion = '1.7.0'
+    def recyclerViewVersion = '1.2.1'
+    def constraintLayoutVersion = '2.1.2'
+    def materialVersion = '1.4.0'
+    def lifecycleVersion = '2.4.0'
+    def roomVersion = '2.4.1'
+    def pagingVersion = '3.1.0'
+    def retrofitVersion = '2.9.0'
+    def okhttpLoggingInterceptorVersion = '4.9.0'
+    def coroutines = '1.5.2'
+    def activity = '1.4.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
     implementation "androidx.core:core-ktx:$coreVersion"
     implementation("androidx.appcompat:appcompat:$supportLibVersion")
     //material
