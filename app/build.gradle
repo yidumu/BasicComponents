@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.basiccomponents"
-        minSdk minSdkVersion
+        minSdk 26
         targetSdk build_versions.target_sdk
         versionCode 1
         versionName "1.0"
