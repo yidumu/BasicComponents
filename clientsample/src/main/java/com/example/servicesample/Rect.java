@@ -1,4 +1,4 @@
-package com.example.servicesample.service;
+package com.example.servicesample;
 
 import android.os.Parcel;
 import android.os.Parcelable;
