@@ -36,6 +36,27 @@ public class RemoteService extends Service {
 
     private final IRemoteService.Stub binder = new IRemoteService.Stub() {
         @Override
+        public Bundle setInPid(Bundle bundle) throws RemoteException {
+            int pid = bundle.getInt("KEY");
+            Log.d(TAG, "setInPid: " + pid);
+            return bundle;
+        }
+
+        @Override
+        public Bundle setOutPid(Bundle bundle) throws RemoteException {
+            int pid = bundle.getInt("KEY");
+            Log.d(TAG, "setOutPid: " + pid);
+            return bundle;
+        }
+
+        @Override
+        public Bundle setInoutPid(Bundle bundle) throws RemoteException {
+            int pid = bundle.getInt("KEY");
+            Log.d(TAG, "setInoutPid: " + pid);
+            return bundle;
+        }
+
+        @Override
         public void saveRect(Bundle bundle) throws RemoteException {
             bundle.setClassLoader(getClass().getClassLoader());
             Rect rect = bundle.getParcelable("rect");

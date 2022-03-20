@@ -7,10 +7,9 @@ interface IRemoteService {
     /** Rect parcelable is stored in the bundle with key "rect" */
     oneway void saveRect(in Bundle bundle);
 
-    int setInPid(in int pid);
-    int setOutPid(out int pid);
-    int setInoutPid(inout int pid);
-
+    Bundle setInPid(in Bundle bundle);
+    Bundle setOutPid(out Bundle bundle);
+    Bundle setInoutPid(inout Bundle bundle);
     int getPid();
 
     /**

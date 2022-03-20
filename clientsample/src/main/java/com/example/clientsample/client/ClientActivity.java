@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Process;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 
-import com.example.clientsample.R;
 import com.example.clientsample.databinding.ActivityClientBinding;
 import com.example.servicesample.IRemoteService;
 
@@ -29,7 +29,16 @@ public class ClientActivity extends AppCompatActivity {
             Log.d(TAG, "onServiceConnected() called with: name = [" + name + "], service = [" + service + "]");
             remoteService = IRemoteService.Stub.asInterface(service);
             try {
-                Log.d(TAG, "onServiceConnected: " + remoteService.getPid());
+                Bundle bundle = new Bundle();
+                bundle.putInt("KEY", Process.myPid());
+                Log.d(TAG, "onServiceConnected: " + remoteService.setInPid(bundle));
+                Bundle bundleOut = new Bundle();
+                bundleOut.putInt("KEY", Process.myPid());
+                Log.d(TAG, "onServiceConnected: " + (remoteService.setOutPid(bundleOut) == bundleOut));
+                Bundle bundleInOut = new Bundle();
+                bundleInOut.putInt("KEY", Process.myPid());
+                Log.d(TAG, "onServiceConnected: " + (remoteService.setInoutPid(bundleInOut) == bundleInOut));
+                Log.d(TAG, "onServiceConnected: " + remoteService.setInoutPid(bundleInOut));
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
