@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Process;
 import android.os.RemoteException;
+import android.os.SystemClock;
 import android.util.Log;
 
 import com.example.servicesample.IRemoteService;
@@ -19,7 +20,7 @@ public class RemoteService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate: ");
+        Log.d(TAG, "onCreate() called");
     }
 
     @Override
@@ -39,6 +40,7 @@ public class RemoteService extends Service {
         public Bundle setInPid(Bundle bundle) throws RemoteException {
             int pid = bundle.getInt("KEY");
             Log.d(TAG, "setInPid: " + pid);
+            bundle.putInt("KEY", Process.myPid());
             return bundle;
         }
 
@@ -46,6 +48,7 @@ public class RemoteService extends Service {
         public Bundle setOutPid(Bundle bundle) throws RemoteException {
             int pid = bundle.getInt("KEY");
             Log.d(TAG, "setOutPid: " + pid);
+            bundle.putInt("KEY", Process.myPid());
             return bundle;
         }
 
@@ -53,15 +56,17 @@ public class RemoteService extends Service {
         public Bundle setInoutPid(Bundle bundle) throws RemoteException {
             int pid = bundle.getInt("KEY");
             Log.d(TAG, "setInoutPid: " + pid);
+            bundle.putInt("KEY", Process.myPid());
             return bundle;
         }
 
         @Override
         public void saveRect(Bundle bundle) throws RemoteException {
             bundle.setClassLoader(getClass().getClassLoader());
-            Rect rect = bundle.getParcelable("rect");
+            Rect rect = bundle.getParcelable("RECT");
+            SystemClock.sleep(3000);
+            Log.d(TAG, "saveRect rect:" + rect);
             //process(rect); // Do more with the parcelable.
-
         }
 
         public int getPid() {
